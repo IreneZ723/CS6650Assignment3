@@ -25,18 +25,18 @@ public class ExampleClient {
 
 
         File image = new File("albumImageTest.png");
-        AlbumsProfile profile = new AlbumsProfile();
+        AlbumsProfile profile = new AlbumsProfile("yanlin", "sda", "year");
         long start = System.currentTimeMillis();
         for (int i = 0; i < NUMTHREADS; i++) {
             // lambda runnable creation - interface only has a single method so lambda works fine
 
             Runnable thread = () -> {
                 DefaultApi apiInstance = new DefaultApi();
-                apiInstance.getApiClient().setBasePath("http://52.26.124.28:8080/javaServlet_war");
+                apiInstance.getApiClient().setBasePath("http://54.184.67.222:8080/javaServlet_war");
                 for (int j = 0; j < 100; j++) {
                     try {
                         apiInstance.newAlbum(image, profile);
-                        apiInstance.getAlbumByKey("sa");
+                        apiInstance.getAlbumByKey("1");
                     } catch (ApiException e) {
                         e.printStackTrace();
                     }

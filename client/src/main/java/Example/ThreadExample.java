@@ -24,12 +24,12 @@ public class ThreadExample {
         DefaultApi apiInstance = new DefaultApi();
         apiInstance.getApiClient().setBasePath("http://54.213.246.123:8080/javaServlet_war");
         File image = new File("albumImageTest.png");
-        AlbumsProfile profile = new AlbumsProfile();
+        AlbumsProfile profile = new AlbumsProfile("Yanlin", "Title", "Year");
 
         for (int i = 0; i < NUMTHREADS; i++) {
             // lambda runnable creation - interface only has a single method so lambda works fine
             Runnable thread = () -> {
-                
+
                 counter.inc();
                 completed.countDown();
             };

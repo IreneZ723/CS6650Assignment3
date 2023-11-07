@@ -30,7 +30,7 @@ public class OneThread2 extends Thread {
         apiInstance.getApiClient().setBasePath(IPAddr);
 
         File image = new File("albumImageTest.png");
-        AlbumsProfile exampleProfile = new AlbumsProfile().artist("Yanlin").year("1998").title("client2");
+        AlbumsProfile exampleProfile = new AlbumsProfile("Yanlin", "client2", "1998");
 
         for (int i = 0; i < requestPerThread; i++) {
 
