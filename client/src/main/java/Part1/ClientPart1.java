@@ -38,12 +38,12 @@ public class ClientPart1 {
         long startUpEndTime = System.currentTimeMillis();
 
         System.out.println("[Start Up]: The initialization phase completed in " + (startUpEndTime - startUpStartTime) + " milliseconds");
-        System.out.println("[Start UP]: Throughput " + NUMTHREADS * 200 * 1000 / (startUpEndTime - startUpStartTime) + " req/sec");
+        System.out.println("[Start UP]: Throughput " + NUMTHREADS * 400 * 1000 / (startUpEndTime - startUpStartTime) + " req/sec");
 
 
         // Start step3
         long startTime = System.currentTimeMillis();
-        OneGroup(1000, numThreadGroups, threadGroupSize, delaySeconds, IPAddr, counter);
+        OneGroup(100, numThreadGroups, threadGroupSize, delaySeconds, IPAddr, counter);
 
         long endTime = System.currentTimeMillis();
         double wallTime = (endTime - startTime) / 1000;

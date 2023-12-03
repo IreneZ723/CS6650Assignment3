@@ -11,14 +11,14 @@ public class DefaultPost {
     public static void main(String[] args) {
 
         DefaultApi apiInstance = new DefaultApi();
-        apiInstance.getApiClient().setBasePath("http://54.184.67.222:8080/javaServlet_war");
+        apiInstance.getApiClient().setBasePath("http://54.201.6.1:8080/javaServlet_war");
         File image = new File("albumImageTest.png");
         AlbumsProfile profile = new AlbumsProfile("Yanlin", "Title", "Year");
-        for (int i = 0; i < 10000; i++) {
+        for (int i = 0; i < 100; i++) {
             try {
                 long start = System.currentTimeMillis();
 
-//                apiInstance.newAlbumWithHttpInfo(image, profile);
+                apiInstance.newAlbumWithHttpInfo(image, profile);
                 apiInstance.getAlbumByKey("1");
                 long end = System.currentTimeMillis();
                 System.out.println(end - start);

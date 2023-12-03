@@ -1,10 +1,10 @@
-import java.io.File;
 import java.io.InputStream;
 import java.io.PrintWriter;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
+import org.apache.commons.dbcp2.BasicDataSource;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -24,7 +24,21 @@ import java.sql.*;
 public class AlbumServlet extends HttpServlet {
 
     private Gson gson = new Gson();
-    AlbumsDao albumsDao = new AlbumsDao();
+    private AlbumsDao albumsDao;
+    private DBCPDataSource dbcpDataSource;
+    private Connection conn;
+
+    @Override
+    public void init() {
+        this.albumsDao = new AlbumsDao();
+        this.dbcpDataSource = new DBCPDataSource();
+        try {
+            this.conn = this.dbcpDataSource.getDataSource().getConnection();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -40,7 +54,7 @@ public class AlbumServlet extends HttpServlet {
         response.setContentType("application/json");
         PrintWriter out = response.getWriter();
         try {
-            AlbumInfo albumInfo = albumsDao.getAlbum(albumID);
+            AlbumInfo albumInfo = albumsDao.getAlbum(conn, albumID);
             if (albumInfo == null) throw new SQLException("Error getting album\n");
             response.setStatus(HttpServletResponse.SC_OK);
             response.getWriter().write(this.gson.toJson(albumInfo));
@@ -61,8 +75,7 @@ public class AlbumServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         Part imagePart = request.getPart("image");
-        Part profilePart = request.getPart("profile");
-        if (imagePart == null || profilePart == null) {
+        if (imagePart == null) {
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             out.print("Error: imagePart or profilePart is null");
             out.flush();
@@ -88,36 +101,35 @@ public class AlbumServlet extends HttpServlet {
             response.getWriter().write("Make sure profile is valid");
             return;
         }
-        
-        if (profileString == null) {
+        System.out.println(profileString);
+        String[] lines = profileString.split("\n");
+        String artist = null;
+        String title = null;
+        String year = null;
+
+        for (String line : lines) {
+            line = line.trim();
+            if (line.startsWith("artist:")) {
+                artist = line.split(":")[1].trim();
+            } else if (line.startsWith("title:")) {
+                title = line.split(":")[1].trim();
+            } else if (line.startsWith("year:")) {
+                year = line.split(":")[1].trim();
+            }
+        }
+
+        if (artist == null || title == null || year == null) {
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-            response.getWriter().write("Make sure profile is valid");
+            response.getWriter().write("Profile data is incomplete" + artist + title + year);
             return;
         }
 
-        // Parse the JSON string into a Profile object
-        ObjectMapper objectMapper = new ObjectMapper();
-        Profile profile = null;
-
         try {
-            profile = objectMapper.readValue(profileString, Profile.class);
-        } catch (Exception e) {
-            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-            response.getWriter().write("Invalid profile JSON");
-            return;
-        }
-
-        // Now you can access the profile data
-        String artist = profile.getArtist();
-        String title = profile.getTitle();
-        String year = profile.getYear();
-
-        try {
-            ImageMetaData newAlbum = albumsDao.createNewAlbum(new AlbumInfo(artist, title, year), sizeString);
+            ImageMetaData newAlbum = albumsDao.createNewAlbum(conn, new AlbumInfo(artist, title, year), sizeString);
             if (newAlbum == null) throw new SQLException("Error creating album\n");
             response.setStatus(HttpServletResponse.SC_OK);
             response.getWriter().write(this.gson.toJson(newAlbum));
-
+            return;
         } catch (SQLException e) {
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             out.print("cannot add new album!\n");
@@ -128,7 +140,20 @@ public class AlbumServlet extends HttpServlet {
             e.printStackTrace(response.getWriter());
             out.flush();
         }
-        ;
+
+    }
+
+    @Override
+    public void destroy() {
+        if (this.conn != null) {
+            try {
+                this.conn.close();
+                this.dbcpDataSource.getDataSource().close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            System.out.println("Connection closed");
+        }
     }
 
 

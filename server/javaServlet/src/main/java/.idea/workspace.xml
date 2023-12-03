@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a81d95a5-79d7-4dc0-9e2f-ea85d8674460" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../../client/latency_rcds-Go-10.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/latency_rcds-Go-20.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/latency_rcds-Go-30.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/latency_rcds-Java-10.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/latency_rcds-Java-10.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/latency_rcds-Java-20.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/latency_rcds-Java-20.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/latency_rcds-Java-30.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/latency_rcds-Java-30.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/latency_records-1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/latency_records-2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/latency_records-3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/src/main/java/Example/DefaultPost.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/src/main/java/Example/DefaultPost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/src/main/java/Example/ExampleClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/src/main/java/Example/ExampleClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/src/main/java/Part1/LoadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/src/main/java/Part1/LoadTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/src/main/java/Part2/ClientPart2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/src/main/java/Part2/ClientPart2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/src/main/java/Part2/LoadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/src/main/java/Part2/LoadTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/Example/ApiCaller.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/Example/ApiCaller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/Example/DefaultApiExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/Example/DefaultApiExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/Example/DefaultPost.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/Example/DefaultPost.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/Example/ExampleClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/Example/ExampleClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/Example/ThreadExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/Example/ThreadExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/Part1/ClientPart1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/Part1/ClientPart1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/Part1/Counter.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/Part1/Counter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/Part1/LoadTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/Part1/LoadTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/Part1/OneThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/Part1/OneThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/Part2/CalculateResponseTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/Part2/CalculateResponseTime.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/Part2/ClientPart2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/Part2/ClientPart2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/Part2/LoadTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/Part2/LoadTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/Part2/OneThread2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/Part2/OneThread2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/Part2/ResponseRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/Part2/ResponseRecord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/ApiCallback.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/ApiCallback.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/ApiClient$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/ApiClient$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/ApiClient$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/ApiClient$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/ApiClient$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/ApiClient$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/ApiClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/ApiClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/ApiException.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/ApiException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/ApiResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/ApiResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/Configuration.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/Configuration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/GzipRequestInterceptor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/GzipRequestInterceptor$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/GzipRequestInterceptor$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/GzipRequestInterceptor$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/GzipRequestInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/GzipRequestInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/JSON$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/JSON$DateTypeAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/JSON$DateTypeAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/JSON$LocalDateTypeAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/JSON$LocalDateTypeAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/JSON$OffsetDateTimeTypeAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/JSON$OffsetDateTimeTypeAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/JSON$SqlDateTypeAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/JSON$SqlDateTypeAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/JSON.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/JSON.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/Pair.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/Pair.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/ProgressRequestBody$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/ProgressRequestBody$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/ProgressRequestBody$ProgressRequestListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/ProgressRequestBody$ProgressRequestListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/ProgressRequestBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/ProgressRequestBody.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/ProgressResponseBody$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/ProgressResponseBody$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/ProgressResponseBody$ProgressListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/ProgressResponseBody$ProgressListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/ProgressResponseBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/ProgressResponseBody.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/StringUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/StringUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/api/DefaultApi$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/api/DefaultApi$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/api/DefaultApi$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/api/DefaultApi$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/api/DefaultApi$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/api/DefaultApi$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/api/DefaultApi$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/api/DefaultApi$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/api/DefaultApi$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/api/DefaultApi$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/api/DefaultApi$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/api/DefaultApi$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/api/DefaultApi$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/api/DefaultApi$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/api/DefaultApi$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/api/DefaultApi$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/api/DefaultApi$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/api/DefaultApi$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/api/DefaultApi$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/api/DefaultApi$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/api/DefaultApi.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/api/DefaultApi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/auth/ApiKeyAuth.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/auth/ApiKeyAuth.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/auth/HttpBasicAuth.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/auth/HttpBasicAuth.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/auth/OAuth.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/auth/OAuth.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/auth/OAuthFlow.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/auth/OAuthFlow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/model/AlbumInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/model/AlbumInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/model/AlbumsBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/model/AlbumsBody.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/model/AlbumsProfile.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/model/AlbumsProfile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/model/ErrorMsg.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/model/ErrorMsg.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/model/ImageMetaData.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../client/target/classes/io/swagger/client/model/ImageMetaData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../client/target/test-classes/image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../goServer" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../goServer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/artifacts/javaServlet_war/javaServlet_war.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../../out/artifacts/javaServlet_war/javaServlet_war.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/artifacts/javaServlet_war_exploded/WEB-INF/classes/AlbumServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../out/artifacts/javaServlet_war_exploded/WEB-INF/classes/AlbumServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/artifacts/javaServlet_war_exploded/WEB-INF/classes/AlbumsDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../out/artifacts/javaServlet_war_exploded/WEB-INF/classes/AlbumsDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../out/artifacts/javaServlet_war_exploded/WEB-INF/classes/DBCPDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../out/artifacts/javaServlet_war_exploded/WEB-INF/classes/DBCPDataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbumServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/AlbumServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbumsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/AlbumsDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBCPDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/DBCPDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../target/classes/AlbumServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../target/classes/AlbumServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../target/classes/AlbumsDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../target/classes/AlbumsDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../target/classes/DBCPDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../target/classes/DBCPDataSource.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Xug2cegl2h5fJn5CtL745mVPTd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.formatter.settings.were.checked" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a81d95a5-79d7-4dc0-9e2f-ea85d8674460" name="Changes" comment="" />
+      <created>1699484172963</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1699484172963</updated>
+      <workItem from="1699484174096" duration="35000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+  </component>
+</project>

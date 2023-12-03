@@ -30,9 +30,9 @@ public class ClientPart2 {
         this.delaySeconds = delaySeconds;
         this.IPAddr = IPAddr;
         this.counter = new Counter();
-        String server = IPAddr.contains("javaServlet_war") ? "Java" : "Go";
+        String server = IPAddr.contains("cs6650-a2-alb") ? "LB" : "non-LB";
         String filename = String.format("latency_rcds-%s-%d.csv", server, numThreadGroups);
-        System.out.println("filename: " + filename);
+        //System.out.println("filename: " + filename);
         this.csvPrinter = new CSVPrinter(new FileWriter(filename, false), CSVFormat.DEFAULT);
 
     }

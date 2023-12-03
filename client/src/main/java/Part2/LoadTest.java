@@ -31,18 +31,18 @@ public class LoadTest {
     }
 
     public static void main(String[] args) {
-        LoadTest loadTest1 = new LoadTest(10, 10, 2, "http://34.217.82.130:8080");
-        LoadTest loadTest2 = new LoadTest(10, 20, 2, "http://34.217.82.130:8080");
-        LoadTest loadTest3 = new LoadTest(10, 30, 2, "http://34.217.82.130:8080");
+        LoadTest loadTest1 = new LoadTest(10, 10, 2, "http://cs6650-a2-alb-1782054143.us-west-2.elb.amazonaws.com:8080/javaServlet_war");
+        LoadTest loadTest2 = new LoadTest(10, 20, 2, "http://cs6650-a2-alb-1782054143.us-west-2.elb.amazonaws.com:8080/javaServlet_war");
+        LoadTest loadTest3 = new LoadTest(10, 30, 2, "http://cs6650-a2-alb-1782054143.us-west-2.elb.amazonaws.com:8080/javaServlet_war");
 
         // Java Server
         try {
-            loadTest1.callGoServer();
-            new CalculateResponseTime("latency_rcds-Go-10.csv").printResult();
-            loadTest2.callGoServer();
-            new CalculateResponseTime("latency_rcds-Go-20.csv").printResult();
-            loadTest3.callGoServer();
-            new CalculateResponseTime("latency_rcds-Go-30.csv").printResult();
+//            loadTest1.callJavaServer();
+//            new CalculateResponseTime("latency_rcds-LB-10.csv").printResult();
+            loadTest2.callJavaServer();
+            new CalculateResponseTime("latency_rcds-LB-20.csv").printResult();
+            loadTest3.callJavaServer();
+            new CalculateResponseTime("latency_rcds-LB-30.csv").printResult();
 
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();

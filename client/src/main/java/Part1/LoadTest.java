@@ -27,15 +27,16 @@ public class LoadTest {
     }
 
     public static void main(String[] args) {
-        LoadTest loadTest1 = new LoadTest(10, 10, 2, "http://54.184.67.222:8080/javaServlet_war");
-        LoadTest loadTest2 = new LoadTest(10, 20, 2, "http://54.184.67.222:8080/javaServlet_war");
-        LoadTest loadTest3 = new LoadTest(10, 30, 2, "http://54.184.67.222:8080/javaServlet_war");
+        LoadTest loadTest1 = new LoadTest(10, 10, 2, "http://34.210.9.122:8080/javaServlet_war");
+        LoadTest loadTest2 = new LoadTest(10, 20, 2, "http://34.210.9.122:8080/javaServlet_war");
+        LoadTest loadTest3 = new LoadTest(10, 30, 2, "http://34.210.9.122:8080/javaServlet_war");
 
         // Java Server
         try {
             loadTest1.callJavaServer();
-            loadTest2.callJavaServer();
-            loadTest3.callJavaServer();
+
+//            loadTest2.callJavaServer();
+//            loadTest3.callJavaServer();
 
         } catch (InterruptedException e) {
             e.printStackTrace();

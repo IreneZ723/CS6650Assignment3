@@ -2,6 +2,7 @@ package Part1;
 
 import io.swagger.client.ApiException;
 import io.swagger.client.api.DefaultApi;
+import io.swagger.client.api.LikeApi;
 import io.swagger.client.model.AlbumsProfile;
 
 import java.io.File;
@@ -25,8 +26,9 @@ public class OneThread extends Thread {
     @Override
     public void run() {
         DefaultApi apiInstance = new DefaultApi();
+        LikeApi likeApiInstance = new LikeApi();
         apiInstance.getApiClient().setBasePath(IPAddr);
-
+        likeApiInstance.getApiClient().setBasePath(IPAddr);
         File image = new File("albumImageTest.png");
         AlbumsProfile exampleProfile = new AlbumsProfile("Yanlin", "client1", "1998");
 
@@ -57,15 +59,57 @@ public class OneThread extends Thread {
                     }
                 }
             }
+            // first time "like"
             currentTry = 0;
             while (currentTry < MAXTRIES) {
                 try {
-
-                    statusCode = apiInstance.getAlbumByKeyWithHttpInfo("3").getStatusCode();
+                    statusCode = likeApiInstance.reviewWithHttpInfo("like", "1").getStatusCode();
                     if (statusCode == 200) break;
                     if (statusCode >= 400 && statusCode <= 599) {
                         // 4XX or 5XX response, retry the request
-                        System.out.println("Retry Get Requets");
+                        System.out.println("Retry Like Request");
+                        currentTry++;
+                        continue;
+                    }
+                } catch (ApiException e) {
+                    //e.printStackTrace();
+                    currentTry++;
+                    if (currentTry >= maxRetries) {
+                        // Retry limit reached
+                        counter.incFailedReq(1);
+                    }
+                }
+            }
+            // second time "like"
+            currentTry = 0;
+            while (currentTry < MAXTRIES) {
+                try {
+                    statusCode = likeApiInstance.reviewWithHttpInfo("like", "1").getStatusCode();
+                    if (statusCode == 200) break;
+                    if (statusCode >= 400 && statusCode <= 599) {
+                        // 4XX or 5XX response, retry the request
+                        System.out.println("Retry Like Request");
+                        currentTry++;
+                        continue;
+                    }
+                } catch (ApiException e) {
+                    //e.printStackTrace();
+                    currentTry++;
+                    if (currentTry >= maxRetries) {
+                        // Retry limit reached
+                        counter.incFailedReq(1);
+                    }
+                }
+            }
+            // first time "dislike"
+            currentTry = 0;
+            while (currentTry < MAXTRIES) {
+                try {
+                    statusCode = likeApiInstance.reviewWithHttpInfo("dislike", "1").getStatusCode();
+                    if (statusCode == 200) break;
+                    if (statusCode >= 400 && statusCode <= 599) {
+                        // 4XX or 5XX response, retry the request
+                        System.out.println("Retry Like Request");
                         currentTry++;
                         continue;
                     }
@@ -82,6 +126,6 @@ public class OneThread extends Thread {
         }
 
         threadLatch.countDown(); //signal that this thread has completed
-        counter.incrTotoalReq(requestPerThread * 2);
+        counter.incrTotoalReq(requestPerThread * 4);
     }
 }

@@ -2,6 +2,7 @@ package Example;
 
 import io.swagger.client.ApiException;
 import io.swagger.client.api.DefaultApi;
+import io.swagger.client.api.LikeApi;
 import io.swagger.client.model.AlbumsProfile;
 
 import java.io.File;
@@ -32,11 +33,13 @@ public class ExampleClient {
 
             Runnable thread = () -> {
                 DefaultApi apiInstance = new DefaultApi();
-                apiInstance.getApiClient().setBasePath("http://54.184.67.222:8080/javaServlet_war");
+                LikeApi likeApiInstance = new LikeApi();
+                apiInstance.getApiClient().setBasePath("http://54.213.210.122:8080/javaServlet_war");
+                likeApiInstance.getApiClient().setBasePath("http://54.213.210.122:8080/javaServlet_war");
                 for (int j = 0; j < 100; j++) {
                     try {
                         apiInstance.newAlbum(image, profile);
-                        apiInstance.getAlbumByKey("1");
+                        likeApiInstance.reviewWithHttpInfo("dislike", "1");
                     } catch (ApiException e) {
                         e.printStackTrace();
                     }
