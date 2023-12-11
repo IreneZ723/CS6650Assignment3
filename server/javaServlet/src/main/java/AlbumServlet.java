@@ -1,9 +1,9 @@
-import java.io.InputStream;
-import java.io.PrintWriter;
+import java.io.*;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import org.apache.commons.dbcp2.BasicDataSource;
 
 import javax.servlet.ServletException;
@@ -12,7 +12,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import javax.servlet.http.Part;
 
 import java.sql.*;
@@ -95,33 +94,72 @@ public class AlbumServlet extends HttpServlet {
 
         // Parse profile object
         // Use objectMapper to read and parse the JSON from the InputStream
-        String profileString = request.getParameter("profile");
-        if (profileString == null) {
-            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-            response.getWriter().write("Make sure profile is valid");
-            return;
-        }
-        System.out.println(profileString);
-        String[] lines = profileString.split("\n");
+//        String profileString = request.getParameter("profile");
+//        if (profileString == null) {
+//            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+//            response.getWriter().write("Make sure profile is valid");
+//            return;
+//        }
+//        System.out.println(profileString);
+//        String[] lines = profileString.split("\n");
         String artist = null;
         String title = null;
         String year = null;
+//
+//        for (String line : lines) {
+//            line = line.trim();
+//            if (line.startsWith("artist:")) {
+//                artist = line.split(":")[1].trim();
+//            } else if (line.startsWith("title:")) {
+//                title = line.split(":")[1].trim();
+//            } else if (line.startsWith("year:")) {
+//                year = line.split(":")[1].trim();
+//            }
+//        }
+//
+//        if (artist == null || title == null || year == null) {
+//            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+//            response.getWriter().write("Profile data is incomplete" + artist + title + year);
+//            return;
+//        }
 
-        for (String line : lines) {
-            line = line.trim();
-            if (line.startsWith("artist:")) {
-                artist = line.split(":")[1].trim();
-            } else if (line.startsWith("title:")) {
-                title = line.split(":")[1].trim();
-            } else if (line.startsWith("year:")) {
-                year = line.split(":")[1].trim();
+        Part profilePart = request.getPart("profile");
+        JsonObject profileObject = null;
+        if (profilePart != null) {
+            try (BufferedReader reader = new BufferedReader(
+                    new InputStreamReader(profilePart.getInputStream()))) {
+                StringBuilder stringBuilder = new StringBuilder();
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    stringBuilder.append(line);
+                }
+                String profileJson = stringBuilder.toString();
+
+                if (profileJson.substring(0, 1).equals("c")) {
+                    profileJson = profileJson.replace("class AlbumsProfile {", "").replace("}", "").trim();
+                    String[] keyValuePairs = profileJson.split(":\\s+string");
+                    StringBuilder jsonString = new StringBuilder();
+                    jsonString.append("{");
+                    for (int i = 0; i < keyValuePairs.length - 1; i++) {
+                        String[] parts = keyValuePairs[i].split(":\\s+");
+                        jsonString.append("\"").append(parts[0].trim()).append("\":\"string\",");
+                    }
+                    String lastPair = keyValuePairs[keyValuePairs.length - 1].trim();
+                    String[] parts = lastPair.split(":\\s+");
+                    jsonString.append("\"").append(parts[0].trim()).append("\":\"string\"");
+                    jsonString.append("}");
+                    profileJson = jsonString.toString();
+//          profileJson.replaceAll("\":\"", "\":");
+                }
+                Gson gson = new Gson();
+                profileObject = gson.fromJson(profileJson, JsonObject.class);
             }
         }
 
-        if (artist == null || title == null || year == null) {
-            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-            response.getWriter().write("Profile data is incomplete" + artist + title + year);
-            return;
+        if (profileObject != null) {
+            artist = profileObject.get("artist").getAsString();
+            title = profileObject.get("title").getAsString();
+            year = profileObject.get("year").getAsString();
         }
 
         try {

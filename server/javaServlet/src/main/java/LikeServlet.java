@@ -9,8 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 
+import java.sql.SQLException;
 import java.util.concurrent.TimeoutException;
 
 @WebServlet(value = "/review/*")
@@ -19,10 +21,20 @@ public class LikeServlet extends HttpServlet {
     private Gson gson;
     private ConnectionFactory rbmqfactory;
     private Connection rbmqConnection;
+    private LikeDao likeDao;
+    private DBCPDataSource dbcpDataSource;
+    private java.sql.Connection conn;
 
     @Override
     public void init() throws ServletException {
         this.gson = new Gson();
+        this.likeDao = new LikeDao();
+        this.dbcpDataSource = new DBCPDataSource();
+        try {
+            this.conn = this.dbcpDataSource.getDataSource().getConnection();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         try {
             rbmqfactory = new ConnectionFactory();
             rbmqfactory.setHost("localhost");
@@ -37,6 +49,36 @@ public class LikeServlet extends HttpServlet {
             e.printStackTrace();
             throw new ServletException("Error during initializing new connection" + e.getMessage());
         }
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Extract the albumID from the request URL
+        String pathInfo = request.getPathInfo();
+        if (pathInfo == null || pathInfo.length() <= 1) {
+            // Handle invalid or missing albumID in the path
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            response.getWriter().write("{ \"error\": \"Invalid or missing albumID in the path\" }");
+            return;
+        }
+
+        String albumID = pathInfo.split("/")[1];
+
+        PrintWriter out = response.getWriter();
+        try {
+            LikeInfo likeInfo = likeDao.getReviewById(conn, albumID);
+            response.setStatus(HttpServletResponse.SC_OK);
+            response.setContentType("application/json");
+            response.getWriter().write(this.gson.toJson(likeInfo));
+        } catch (SQLException e) {
+            response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            e.printStackTrace(response.getWriter());
+            out.print("Fail to get liks and dislikes");
+            out.flush();
+        }
+        // Replace this with your actual logic
+
+
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
